@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
+
+<idea-plugin url="http://www.intellij.org/twiki/bin/view/Main/UpperLowerCapitalize">
+
+  <name>ToggleCase_db</name>
+
+  <description>
+    Editor actions to UpperCase, LowerCase, Capitalize or invert the case of
+    characters in a word or selection with a behavior similar to Emacs'
+    upcase-region-or-word, downcase-region-or-word and capitalize-region-or-word.
+
+    If the cursor is not on a word, the next word following the cursor is
+    considered (even on another line). If the cursor is in the middle of a
+    word, only the part following the cursor is transformed. In any case,
+    the cursor is moved after the transformed word.
+
+    Actions can be found under Editor Actions and are by default bound to
+    Alt-C (Capitalize), Alt-L (Lowercase), Alt-P (Uppercase). The ToggleCase
+    action is unbound.
+  </description>
+
+  <version>0.1.1q</version>
+
+  <vendor url="http://www.intellij.org/twiki/bin/view/Main/VinceMallet" email="vmallet@jfouffa.com">Vincent Mallet</vendor>
+
+  <change-notes><![CDATA[
+      Updated for IDEA Build #3245.
+    ]]></change-notes>
+
+  <idea-version since-build="3245"/>
+
+  <actions>
+
+
+
+    <action id          = "UpperLowerCapitalize.CapitalizeAction"
+            class       = "com.jfouffa.vmallet.idea.capitalize.CapitalizeAction"
+            text        = "Capitalize Word"
+            description = "Capitalize word at cursor, starting at caret">
+      <keyboard-shortcut first-keystroke="alt C" keymap="$default"/>
+      <add-to-group anchor="last" group-id="EditorActions"/>
+    </action>
+
+
+  </actions>
+
+</idea-plugin>
